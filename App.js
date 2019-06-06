@@ -1,21 +1,16 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createAppContainer, createStackNavigator } from "react-navigation";
+import TodoList from "./components/TodoList";
+import TabTwo from "./components/TabTwo";
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const Home = createStackNavigator(
+  {
+    Home: TodoList
   },
-});
+  {
+    defaultNavigationOptions: {
+      title: "Todo List"
+    }
+  }
+);
+
+export default createAppContainer(Home);
