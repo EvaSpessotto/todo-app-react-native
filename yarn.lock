@@ -4860,9 +4860,9 @@ react-native-view-shot@2.5.0:
   resolved "https://registry.yarnpkg.com/react-native-view-shot/-/react-native-view-shot-2.5.0.tgz#428a997f470d3148d0067c5b46abd988ef1aa4c0"
   integrity sha512-xFJA+N7wh8Ik/17I4QB24e0a0L3atg1ScVehvtYR5UBTgHdzTFA0ZylvXp9gkZt7V+AT5Pni0H3NQItpqSKFoQ==
 
-"react-native@https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz":
+"react-native@https://github.com/expo/react-native/archive/sdk-32.0.1.tar.gz":
   version "0.57.1"
-  resolved "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz#78bcdc7d34a2f4a58c179699e775842a74da6c6f"
+  resolved "https://github.com/expo/react-native/archive/sdk-32.0.1.tar.gz#22893682f00245b4362a9e1925408f73f4f2af29"
   dependencies:
     absolute-path "^0.0.0"
     art "^0.10.0"
@@ -4970,15 +4970,15 @@ react-transform-hmr@^1.0.4:
     global "^4.3.0"
     react-proxy "^1.1.7"
 
-react@16.8.0:
-  version "16.8.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.8.0.tgz#8533f0e4af818f448a276eae71681d09e8dd970a"
-  integrity sha512-g+nikW2D48kqgWSPwNo0NH9tIGG3DsQFlrtrQ1kj6W77z5ahyIHG0w8kPpz4Sdj6gyLnz0lEd/xsjOoGge2MYQ==
+react@16.8.4:
+  version "16.8.4"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.8.4.tgz#fdf7bd9ae53f03a9c4cd1a371432c206be1c4768"
+  integrity sha512-0GQ6gFXfUH7aZcjGVymlPOASTuSjlQL4ZtVC5YKH+3JL6bBLCVO21DknzmaPlI90LN253ojj02nsapy+j7wIjg==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    scheduler "^0.13.0"
+    scheduler "^0.13.4"
 
 read-pkg-up@^2.0.0:
   version "2.0.0"
@@ -5241,7 +5241,7 @@ schedule@0.4.0:
   dependencies:
     object-assign "^4.1.1"
 
-scheduler@^0.13.0:
+scheduler@^0.13.4:
   version "0.13.6"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.13.6.tgz#466a4ec332467b31a91b9bf74e5347072e4cd889"
   integrity sha512-IWnObHt413ucAYKsD9J1QShUKkbKLQQHdxRyw73sw4FN26iWr3DY/H34xGPe4nmL1DwXyWmSWmMrA9TfQbE/XQ==

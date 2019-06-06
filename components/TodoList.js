@@ -18,13 +18,10 @@ class TodoList extends React.Component {
       <View style={styles.container}>
         <CheckBox
           title="Click Here"
+          checkedColor="green"
           checked={this.state.isChecked}
           onPress={() => this.handleCheck()}
         />
-        <CheckBox title="Click Here" />
-        <CheckBox title="Click Here" />
-        <CheckBox title="Click Here" />
-        <CheckBox title="Click Here" />
       </View>
     );
   }
