@@ -1,10 +1,9 @@
 import { createAppContainer, createStackNavigator } from "react-navigation";
-import TodoList from "./components/TodoList";
-import TabTwo from "./components/TabTwo";
+import ListContainer from "./containers/ListContainer";
 
 const Home = createStackNavigator(
   {
-    Home: TodoList
+    Home: ListContainer
   },
   {
     defaultNavigationOptions: {

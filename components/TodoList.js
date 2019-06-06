@@ -1,36 +1,10 @@
-import React, { useState } from "react";
-import { View, Text } from "react-native";
-import { CheckBox } from "react-native-elements";
-import { Ionicons } from "@expo/vector-icons";
+import React from "react";
+import TodoItem from "./TodoItem";
 
-class TodoList extends React.Component {
-  state = {
-    isChecked: false
-  };
-
-  handleCheck() {
-    this.setState({
-      isChecked: !this.state.isChecked
-    });
-  }
-  render() {
-    return (
-      <View style={styles.container}>
-        <CheckBox
-          title="Click Here"
-          checkedColor="green"
-          checked={this.state.isChecked}
-          onPress={() => this.handleCheck()}
-        />
-      </View>
-    );
-  }
-}
+const TodoList = ({ tasks }) => {
+  return tasks.map((task, index) => {
+    return <TodoItem key={index} task={task} />;
+  });
+};
 
 export default TodoList;
-
-const styles = {
-  container: {
-    marginTop: 10
-  }
-};
