@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import { View, TextInput } from "react-native";
+import { View, StyleSheet } from "react-native";
 import TodoList from "../components/TodoList";
-import { Input, Button } from "react-native-elements";
+import { Input, Button, CheckBox } from "react-native-elements";
 
 class ListContainer extends Component {
   state = {
-    tasks: ["First task"],
-    currentTask: ""
+    tasks: [],
+    currentTask: "",
+    isChecked: false
   };
 
   onChangeText = text => {
@@ -22,19 +23,55 @@ class ListContainer extends Component {
     });
   };
 
+  handleCheck = () => {
+    this.setState({
+      isChecked: !this.state.isChecked
+    });
+  };
+
   render() {
+    console.log(this.state.isChecked);
     return (
       <View>
-        <Input
-          placeholder="Add task"
-          value={this.state.currentTask}
-          onChangeText={this.onChangeText}
-        />
-        <Button title="Done" onPress={this.addTask} />
-        <TodoList tasks={this.state.tasks} />
+        <View style={styles.submitContainer}>
+          <View style={{ flex: 1 }}>
+            <Input
+              placeholder="Add task"
+              value={this.state.currentTask}
+              onChangeText={this.onChangeText}
+            />
+          </View>
+          <View>
+            <Button title="Done" onPress={this.addTask} />
+          </View>
+        </View>
+        <View style={styles.listContainer}>
+          <TodoList
+            tasks={this.state.tasks}
+            isChecked={this.state.isChecked}
+            handleCheck={this.handleCheck}
+          />
+        </View>
+        {/* <CheckBox
+          title={"oui"}
+          checkedColor="green"
+          checked={this.state.isChecked}
+          onPress={() => this.setState({ isChecked: !this.state.isChecked })}
+        /> */}
       </View>
     );
   }
 }
 
 export default ListContainer;
+
+const styles = StyleSheet.create({
+  submitContainer: {
+    display: "flex",
+    flexDirection: "row",
+    marginTop: 10
+  },
+  listContainer: {
+    marginTop: 20
+  }
+});
