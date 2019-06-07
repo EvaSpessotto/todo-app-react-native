@@ -1,14 +1,13 @@
 import React from "react";
 import { CheckBox } from "react-native-elements";
 
-const TodoItem = ({ task, isChecked, handleCheck }) => {
-  console.log(isChecked);
+const TodoItem = ({ task, handleCheck }) => {
   return (
     <CheckBox
-      title={task}
+      title={task.task}
       checkedColor="green"
-      checked={isChecked}
-      onPress={handleCheck}
+      checked={task.isDone}
+      onPress={() => handleCheck(task)}
     />
   );
 };

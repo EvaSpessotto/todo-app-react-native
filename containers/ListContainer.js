@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, StyleSheet } from "react-native";
 import TodoList from "../components/TodoList";
-import { Input, Button, CheckBox } from "react-native-elements";
+import { Input, Button } from "react-native-elements";
 
 class ListContainer extends Component {
   state = {
@@ -17,20 +17,27 @@ class ListContainer extends Component {
   };
 
   addTask = () => {
+    const newItem = {
+      task: this.state.currentTask,
+      isDone: false,
+      id: this.state.tasks.length + 1
+    };
     this.setState({
       currentTask: "",
-      tasks: [...this.state.tasks, this.state.currentTask]
+      tasks: [...this.state.tasks, newItem]
     });
   };
 
-  handleCheck = () => {
+  handleCheck = task => {
+    const todo = this.state.tasks[task.id - 1];
+    todo.isDone = !todo.isDone;
+    const newTasks = [...this.state.tasks];
     this.setState({
-      isChecked: !this.state.isChecked
+      tasks: newTasks
     });
   };
 
   render() {
-    console.log(this.state.isChecked);
     return (
       <View>
         <View style={styles.submitContainer}>
@@ -46,18 +53,8 @@ class ListContainer extends Component {
           </View>
         </View>
         <View style={styles.listContainer}>
-          <TodoList
-            tasks={this.state.tasks}
-            isChecked={this.state.isChecked}
-            handleCheck={this.handleCheck}
-          />
+          <TodoList tasks={this.state.tasks} handleCheck={this.handleCheck} />
         </View>
-        {/* <CheckBox
-          title={"oui"}
-          checkedColor="green"
-          checked={this.state.isChecked}
-          onPress={() => this.setState({ isChecked: !this.state.isChecked })}
-        /> */}
       </View>
     );
   }

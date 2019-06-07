@@ -1,16 +1,9 @@
 import React from "react";
 import TodoItem from "./TodoItem";
 
-const TodoList = ({ tasks, isChecked, handleCheck }) => {
+const TodoList = ({ tasks, handleCheck }) => {
   return tasks.map((task, index) => {
-    return (
-      <TodoItem
-        key={index}
-        task={task}
-        isChecked={isChecked}
-        handleCheck={handleCheck}
-      />
-    );
+    return <TodoItem key={index} task={task} handleCheck={handleCheck} />;
   });
 };
 
