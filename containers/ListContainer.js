@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, ScrollView, ListView, Text } from "react-native";
 import TodoList from "../components/TodoList";
 import { Input, Button } from "react-native-elements";
+import { Ionicons } from "@expo/vector-icons";
 
 class ListContainer extends Component {
   state = {
@@ -40,18 +41,19 @@ class ListContainer extends Component {
   render() {
     return (
       <View>
-        <View style={styles.submitContainer}>
-          <View style={{ flex: 1 }}>
+        <View style={styles.footer}>
+          <View style={{ flex: 2 }}>
             <Input
               placeholder="Add task"
               value={this.state.currentTask}
               onChangeText={this.onChangeText}
             />
           </View>
-          <View>
-            <Button title="Done" onPress={this.addTask} />
+          <View style={{ flex: 0.3 }}>
+            <Ionicons name="md-add-circle" size={40} onPress={this.addTask} />
           </View>
         </View>
+
         <View style={styles.listContainer}>
           <TodoList tasks={this.state.tasks} handleCheck={this.handleCheck} />
         </View>
@@ -63,9 +65,10 @@ class ListContainer extends Component {
 export default ListContainer;
 
 const styles = StyleSheet.create({
-  submitContainer: {
+  footer: {
     display: "flex",
     flexDirection: "row",
+    justifyContent: "flex-end",
     marginTop: 10
   },
   listContainer: {
